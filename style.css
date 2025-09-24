@@ -30,6 +30,6 @@ body {
     justify-content: flex-start;
 }
 #logo {
-    width: 120px; /* valor fixo para evitar distorção */
+    width: 150px; /* valor fixo para evitar distorção */
     height: auto;
 }
