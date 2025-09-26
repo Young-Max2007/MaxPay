@@ -145,3 +145,21 @@ section {
     margin: 5px;
     padding: 5px;
 }
+/* Remove qualquer scroll lateral */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ajusta o header para caber certinho */
+header {
+    flex-wrap: wrap; /* se faltar espaço, quebra linha */
+    padding: 10px;   /* tira excesso de padding lateral */
+}
+
+/* Ajusta section para não depender de <br> */
+section h1, section h2, section h3, section h4 {
+    margin: 15px 0; /* controla espaçamento no CSS */
+}
+section {
+    margin: 3%;
+}
