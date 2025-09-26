@@ -207,7 +207,7 @@ form {
 }
 fieldset {
     width: 30%;           /* ou 400px, como preferir */
-    margin: 0 auto;       /* centraliza horizontalmente */
+    margin: 5px auto;       /* centraliza horizontalmente */
     padding: 10px;
     border: 1px solid #777777;
     border-radius: 7px;
