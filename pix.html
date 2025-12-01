@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – PIX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="pag">
+
+  <!-- CABEÇALHO -->
+  <div id="cabecalho">
+    <header>
+
+      <div class="menu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <img id="logo" src="MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+      <nav class="lateral" id="lateral">
+        <ul>
+          <li><a href="principal.html">Início</a></li>
+          <li><a href="services.html">Serviços</a></li>
+          <li><a href="fac.html">Ajuda (FAQ)</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html">Sair (Log-out)</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+
+  <!-- ÁREA PRINCIPAL -->
+  <section class="painel">
+
+    <!-- BLOCO SUPERIOR (APENAS SALDO) -->
+    <div class="topo-painel">
+
+      <div class="perfil-usuario perfil-destaque">
+        <p class="tipo-conta">Saldo disponível</p>
+        <h3 id="saldoPrincipal" class="saldo">R$ 1.250,45</h3>
+      </div>
+
+    </div>
+
+    <!-- GRID DE BOTÕES PIX -->
+    <div class="grid-painel">
+
+      <a href="#" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-pagar.png" class="icon-inline">
+            Pagar
+          </h3>
+          <p>Realizar pagamento via QR Code ou chave PIX</p>
+        </div>
+      </a>
+
+      <a href="#" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-receber.png" class="icon-inline">
+            Receber
+          </h3>
+          <p>Gerar QR Code ou chave para receber</p>
+        </div>
+      </a>
+
+      <a href="#" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-historico-pix.png" class="icon-inline">
+            Histórico PIX
+          </h3>
+          <p>Visualizar transações realizadas via PIX</p>
+        </div>
+      </a>
+
+      <a href="#" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-agendar.png" class="icon-inline">
+            Agendar PIX
+          </h3>
+          <p>Programar envio automático de valores</p>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="rodape">
+    Copyright ©2025 • MaxPay | Todos os direitos reservados
+  </footer>
+
+</main>
+
+<script src="scripts.js"></script>
+<script>
+  // Script para menu lateral
+  const menu = document.getElementById('menu');
+  const lateral = document.getElementById('lateral');
+
+  menu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    lateral.classList.toggle('active');
+  });
+
+  // Ativa animação de entrada
+  const pag = document.getElementById('pag');
+  window.addEventListener('load', () => {
+    pag.classList.add('visible');
+  });
+</script>
+</body>
+</html>
