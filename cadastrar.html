@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema MaxPay para conversão de câmbio rápida, segura e prática">
     <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <title>MaxPay - Cadastro</title>
 </head>
 <body>
@@ -38,20 +38,21 @@
                 <h1>Seja bem vindo(a) ao nosso sistema de câmbio!</h1><br>
                 <h2>
                     Para continuar seu cadastro conosco, Por favor,
-                    isira as informações a seguir:
+                    insira as informações a seguir:
                 </h2>
                 <fieldset>
-                <form action="principal.html">
-                    <label for="nome" class="labels">Informe seu nome:</label><br>
-                    <input type="text" class="inputs" name="nome" required><br>
-                    <label for="cpf" class="labels">Informe seu CPF:</label><br>
-                    <input type="number" class="inputs" name="cpf" required><br>
-                    <label for="email" class="labels">E-mail:</label><br>
-                    <input type="email" class="inputs" name="email" required><br>
-                    <label for="senha" class="labels">Senha:</label><br>
-                    <input type="password" class="inputs" name="senha" required><br>
-                    <input type="submit" id="enviar" value="Cadastrar"><br>
-                </form>
+                    <legend>Cadastro</legend>
+                    <form action="principal.html" id="formCadastro">
+                        <label for="nome" class="labels">Informe seu nome:</label><br>
+                        <input type="text" class="inputs" name="nome" required><br>
+                        <label for="cpf" class="labels">Informe seu CPF:</label><br>
+                        <input type="text" class="inputs" name="cpf" maxlength="11" pattern="\d{11}" required>
+                        <label for="email" class="labels">E-mail:</label><br>
+                        <input type="email" class="inputs" name="email" required><br>
+                        <label for="senha" class="labels">Senha:</label><br>
+                        <input type="password" class="inputs" name="senha" required><br>
+                        <input type="submit" id="enviar" value="Cadastrar"><br>
+                    </form>
                 </fieldset>
                 <p>
                     Já possui uma conta?

@@ -1,26 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* ========================= */
+/* BASE GLOBAL */
+/* ========================= */
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     text-align: center;
     background-color: rgb(8, 8, 8);
+    font-family: 'Roboto', sans-serif;
 }
+
 main {
     flex: 1;
 }
+
+html, body {
+    overflow-x: hidden;
+}
+
+h3, p {
+    color: #ffffff;
+}
+
+/* ========================= */
+/* ANIMAÇÃO DE ENTRADA */
+/* ========================= */
+
 #pag {
-    font-family: 'Roboto', sans-serif;
     color: aliceblue;
     opacity: 0;
     transition: opacity 1s ease-in;
 }
+
 #pag.visible {
     opacity: 1;
 }
+
+/* ========================= */
+/* CABEÇALHO */
+/* ========================= */
+
 #cabecalho {
     width: 100%;
     padding: 10px;
@@ -29,47 +53,28 @@ main {
     align-items: center;
     justify-content: flex-start;
 }
-#rodape {
-    font-size: 110%;
-    background-color: black;
-    color: aliceblue;
-}
+
 #logo {
-    width: 200px; /* valor fixo para evitar distorção */
+    width: 200px;
     height: auto;
-}
-.botoes {
-    font-size: 140%;
-    border: solid;
-    border-radius: 7px;
-    text-decoration: none;
-    background-color: aliceblue;
-    color: black;
-    border-color: rgb(255, 255, 255);
-    box-shadow: 
-    0 0 2px rgb(255, 255, 255),
-    0 0 4px rgb(255, 255, 255)
-    ;
+    margin-left: 30%;
 }
 
-/* HEADER */
 header {
     display: flex;
-    justify-content: space-between; /* logo à esquerda, menu à direita */
+    justify-content: space-between;
     align-items: center;
     background-color: black;
     color: white;
     padding: 10px 20px;
     position: relative;
+    flex-wrap: wrap;
 }
 
-/* LOGO */
-.logo img {
-    width: 150px;
-    height: auto;
-}
+/* ========================= */
+/* MENU HAMBURGUER */
+/* ========================= */
 
-/* MENU ICON (hamburger) */
 .menu {
     display: flex;
     flex-direction: column;
@@ -77,6 +82,10 @@ header {
     width: 30px;
     height: 22px;
     cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
 }
 
 .menu span {
@@ -87,25 +96,38 @@ header {
     transition: all 0.3s ease;
 }
 
-/* LATERAL MENU (abre da direita) */
+.menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========================= */
+/* MENU LATERAL */
+/* ========================= */
+
 .lateral {
     position: fixed;
     top: 0;
-    right: -250px; /* começa escondido à direita */
+    left: -250px;
     width: 250px;
     height: 100%;
     background-color: #111;
     padding-top: 60px;
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
     z-index: 1000;
 }
 
-/* Quando ativo, desliza pra dentro */
 .lateral.active {
-    right: 0;
+    left: 0;
 }
 
-/* LINKS DO MENU */
 .lateral ul {
     list-style: none;
     padding: 0;
@@ -129,37 +151,227 @@ header {
     background-color: #333;
 }
 
-/* ANIMAÇÃO DO MENU PARA X */
-.menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+/* ========================= */
+/* PAINEL PRINCIPAL */
+/* ========================= */
+
+.painel {
+    margin: 30px;
 }
 
-.menu.active span:nth-child(2) {
-    opacity: 0;
+.topo-painel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-section {
-    margin: 5px;
-    padding: 5px;
-}
-/* Remove qualquer scroll lateral */
-html, body {
-    overflow-x: hidden;
+/* ========================= */
+/* PERFIL + SALDO */
+/* ========================= */
+
+.perfil-usuario {
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 8px #ffffff;
 }
 
-/* Ajusta o header para caber certinho */
-header {
-    flex-wrap: wrap; /* se faltar espaço, quebra linha */
-    padding: 10px;   /* tira excesso de padding lateral */
+.perfil-destaque {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Ajusta section para não depender de <br> */
-section h1, section h2, section h3, section h4 {
-    margin: 15px 0; /* controla espaçamento no CSS */
+.foto-usuario {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
-section {
-    margin: 3%;
+
+.saldo {
+    font-size: 2.4rem;
+    color: #00ffcc;
+    margin-top: 10px;
+}
+
+.tipo-conta {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* ========================= */
+/* GRID DE BOTÕES */
+/* ========================= */
+
+.grid-painel {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* ========================= */
+/* BOTÕES BASE */
+/* ========================= */
+
+.botoes {
+   text-decoration: none;
+   display: block;
+}
+
+.botoes-sec {
+    background: none;
+    border: none;
+}
+
+/* ========================= */
+/* BOTÕES NEON */
+/* ========================= */
+
+.btn-neon {
+     min-height: 140px;          /* força altura igual */
+    display: flex;
+    justify-content: center;   /* centraliza verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: black;
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.3s ease;
+    box-shadow:
+        0 0 2px rgba(255,255,255,0.3),
+        0 0 4px rgba(255,255,255,0.6);
+}
+
+.btn-neon:hover {
+    box-shadow:
+        0 0 4px rgba(255,255,255,0.5),
+        0 0 8px rgba(255,255,255,0.8);
+    transform: scale(1.03);
+}
+
+.btn-neon h3 {
+    margin: 0;
+}
+
+.btn-neon p {
+    margin: 0;
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+/* ========================= */
+/* ÍCONE AO LADO DO TÍTULO */
+/* ========================= */
+
+.titulo-com-icone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-inline {
+    max-width: 45px;
+    max-height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ========================= */
+/* FORMULÁRIOS (MANTIDOS) */
+/* ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.labels {
+    font-size: 120%;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.inputs {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.inputs:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 5px #00bfff;
+}
+
+#enviar {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: aliceblue;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#enviar:hover {
+    background-color: #ddd;
+}
+
+fieldset {
+    width: 30%;
+    margin: 5px auto;
+    padding: 10px;
+    border: 1px solid #777777;
+    border-radius: 7px;
+    background-color: rgba(255,255,255,0.05);
+    color: aliceblue;
+}
+
+legend {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+/* ========================= */
+/* RODAPÉ */
+/* ========================= */
+
+#rodape {
+    font-size: 110%;
+    background-color: black;
+    color: aliceblue;
+}
+
+/* ========================= */
+/* RESPONSIVO FINO */
+/* ========================= */
+
+@media (max-width: 480px) {
+    .saldo {
+        font-size: 2rem;
+    }
+
+    .icon-inline {
+        max-width: 36px;
+        max-height: 36px;
+    }
+
+    .btn-neon p {
+        font-size: 1.1rem;
+    }
 }

@@ -1,108 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-    <title>MaxPay</title>
+  <meta charset="UTF-8">
+  <title>MaxPay – Painel Principal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div id="cabecalho">
-                <header>
-                    <div class="menu" id="menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <img id="logo" src="MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
-    <!-- Menu lateral -->
-    <nav class="lateral" id="lateral">
-        <ul>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="services.html">Serviços</a></li>
-            <li><a href="fac.html">Ajuda(FAC)</a></li>
-        </ul>
-    </nav>
-            </header>
-            </div>
-        <div id="pagina" class="clearfix">
-            <div id="NA" class="clearfix">
-                <div id="agente">
-                    <img id="foto" src="logo-sierra.jpg" alt="FOTO DO AGENTE">
-                    <p id="bemv"><b>Seja bem vindo de volta!</b></p>
-                </div>
-                <div id="chatSOS">
-                    <a href="chat.html" class="btns-NA">
-                    <div class="btn-chat">
-                        <h3>
-                            Converter
-                        </h3>
-                        <p>
-                            clique aqui para converter moeda
-                        </p>
-                    </div>
-                </a>
-                <a href="SOS.html" class="btns-NA">
-                    <div class="btn-SOS">
-                        <h3>
-                            Transferir
-                        </h3>
-                        <p>
-                            clique aqui para realizar uma transferência
-                        </p>
-                    </div>
-                </a>
-                </div>
-            </div>
-           
-            <a href="missions.html" class="btns">
-                <div class="menu-btn">
-                    <h3>
-                        
-                    </h3>
-                    <p>
-                        clique aqui para ver missões disponíveis
-                        ou em andamento
-                    </p>
-                    
-                </div>
-            </a>
-            <a href="painel.html" class="btns">
-                <div class="menu-btn">
-                    <h3>
-                        Painel
-                    </h3>
-                    <p>
-                        clique aqui para abrir o painel de consultas
-                    </p>
-                </div>
-            </a>
-            <a href="armas.html" class="btns">
-                <div class="menu-btn">
-                    <h3>
-                        Armas
-                    </h3>
-                    <p>
-                        clique aqui para ver os armamentos disponíveis
-                    </p>
-                </div>
-            </a>
-            <a href="equipe.html" class="btns">
-                <div class="menu-btn">
-                    <h3>
-                        Equipe
-                    </h3>
-                    <p>
-                        clique aqui para ver ou solicitar sua equipe de apoio
-                    </p>
-                </div>
-            </a>
-        </div>
-        <!--<footer id="rodape">
-            direitos reservador - sierra company
-        </footer>-->
-    </main>
-</body>
 
+<main id="pag">
+
+  <!-- CABEÇALHO -->
+  <div id="cabecalho">
+    <header>
+
+      <div class="menu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <img id="logo" src="MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+      <nav class="lateral" id="lateral">
+        <ul>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="services.html">Serviços</a></li>
+          <li><a href="fac.html">Ajuda (FAQ)</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+
+  <!-- ÁREA PRINCIPAL -->
+  <section class="painel">
+
+    <!-- BLOCO SUPERIOR (PERFIL + SALDO) -->
+    <div class="topo-painel">
+
+      <div class="perfil-usuario perfil-destaque">
+        <img src="icone-usuario.png" alt="Usuário" class="foto-usuario">
+        <h2>Bem-vindo(a) de volta!</h2>
+        <p>Conta ativa • MaxPay</p>
+
+        <h3 id="saldoPrincipal" class="saldo">R$ 1.250,45</h3>
+        <p class="tipo-conta">Saldo disponível</p>
+      </div>
+
+    </div>
+
+    <!-- GRID GERAL DE BOTÕES -->
+    <div class="grid-painel">
+
+      <a href="historico.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-historico.png" class="icon-inline">
+            Histórico
+          </h3>
+          <p>Transações realizadas</p>
+        </div>
+      </a>
+
+      <a href="transferir.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-transferir.png" class="icon-inline">
+            Transferir
+          </h3>
+          <p>Transferência e PIX</p>
+        </div>
+      </a>
+
+      <a href="pix.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-pix.png" class="icon-inline">
+            PIX
+          </h3>
+          <p>Pagar ou receber instantaneamente</p>
+        </div>
+      </a>
+
+      <a href="converter.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-converter.png" class="icon-inline">
+            Converter
+          </h3>
+          <p>Conversão de moedas em tempo real</p>
+        </div>
+      </a>
+
+      <a href="conta.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-conta.png" class="icon-inline">
+            Conta
+          </h3>
+          <p>Dados e configurações</p>
+        </div>
+      </a>
+
+      <a href="carteira.html" class="botoes botoes-sec">
+  <div class="menu-btn btn-neon">
+    <h3 class="titulo-com-icone">
+      <img src="icone-carteira.png" class="icon-inline">
+      Carteira
+    </h3>
+    <p>Moedas estrangeiras</p>
+  </div>
+</a>
+
+      <a href="suporte.html" class="botoes botoes-sec">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="icone-suporte.png" class="icon-inline">
+            Suporte
+          </h3>
+          <p>Ajuda e atendimento</p>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="rodape">
+    Copyright ©2025 • MaxPay | Todos os direitos reservados
+  </footer>
+
+</main>
+
+<script src="scripts.js"></script>
+</body>
 </html>
