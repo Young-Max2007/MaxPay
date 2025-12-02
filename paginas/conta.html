@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – Minha Conta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="../estilos/style.css">
+  
+  <style>
+    /* Estilos para a seção de dados da conta (pode ser movido para style.css) */
+    .secao-dados {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #111;
+        border: 1px solid #333;
+        border-radius: 8px;
+    }
+    .secao-dados h3 {
+        color: #00ffcc;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        border-bottom: 1px dashed #222;
+        padding-bottom: 5px;
+    }
+    .secao-dados p {
+        color: #ccc;
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .secao-dados strong {
+        color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<main id="pag" class="visible">
+
+  <div id="cabecalho">
+    <header>
+
+      <div class="menu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+      <nav class="lateral" id="lateral">
+        <ul>
+          <li><a href="principal.html">Início</a></li>
+          <li><a href="services.html">Serviços</a></li>
+          <li><a href="fac.html">Ajuda (FAQ)</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html">Sair (Log-out)</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+  <section class="painel">
+
+    <h2>👤 Minha Conta e Configurações</h2>
+    <p>Visualize seus dados e gerencie suas preferências.</p>
+
+    <div class="secao-dados">
+        <h3>Informações Pessoais</h3>
+        <p>Nome: <strong id="nomeUsuario">Nome do Usuário</strong></p>
+        <p>E-mail: <strong id="emailUsuario">usuario@maxpay.com</strong></p>
+        <p>CPF: <strong>***.123.456-**</strong></p>
+        <p>Data de Cadastro: <strong>01/01/2025</strong></p>
+    </div>
+    
+    <div class="secao-dados">
+        <h3>Segurança e Acesso <h4 style="color: #979797;">(visual)</h4></h3>
+        <p>Status: <strong>Verificado</strong></p>
+        <p>Autenticação de Dois Fatores (2FA): <strong>Desativado</strong></p>
+        
+        <button class="botoes0" style="margin-top: 15px;">
+            Alterar Senha
+        </button>
+        <button class="botoes0" style="margin-top: 15px; margin-left: 10px;">
+            Ativar 2FA
+        </button>
+    </div>
+    
+    <div class="secao-dados">
+        <h3>Preferências</h3>
+        <p>Idioma: <strong>Português (Brasil)</strong></p>
+        <p>Notificações: <strong>Ativas</strong></p>
+    </div>
+    
+    <br>
+    <a href="principal.html" class="botoes botoes-sec btn-acao-voltar">
+      <div class="menu-btn btn-neon">
+        <h3>⬅ Voltar</h3>
+      </div>
+    </a>
+  </section>
+
+  <footer id="rodape">
+    Copyright ©2025 • MaxPay | Todos os direitos reservados
+  </footer>
+  </main>
+
+<script src="../scripts/scripts.js"></script>
+<script src="../scripts/conta.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – Suporte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+<main id="pag" class="visible">
+
+  <div id="cabecalho">
+    <header>
+
+      <div class="menu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+      <nav class="lateral" id="lateral">
+        <ul>
+          <li><a href="principal.html">Início</a></li>
+          <li><a href="services.html">Serviços</a></li>
+          <li><a href="fac.html">Ajuda (FAQ)</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html">Sair (Log-out)</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+  <section class="painel">
+
+    <h2><img src="../imagens/icone-suporte.png" class="icon-inline"> Central de Suporte MaxPay</h2>
+    <p style="margin-bottom: 25px;">Selecione uma opção ou explore as dúvidas frequentes para obter ajuda imediata.</p>
+
+    <div class="grid-painel">
+
+      <a href="#" class="botoes botoes-sec" id="btnAbrirChat">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="../imagens/icone-assistente.png" class="icon-inline"> 
+            Assistente Virtual
+          </h3>
+          <p>Tire suas dúvidas instantaneamente.</p>
+        </div>
+      </a>
+
+      <a href="#" class="botoes botoes-sec" target="_blank">
+        <div class="menu-btn btn-neon">
+          <h3 class="titulo-com-icone">
+            <img src="../imagens/icone-whatsapp.png" class="icon-inline">
+            Atendimento WhatsApp
+          </h3>
+          <p>Fale com um especialista.</p>
+        </div>
+      </a>
+
+    </div>
+    
+    <div id="chat-simulacao" style="display: none;">
+        <div class="chat-container">
+            <div class="mensagem assistente">Olá! Eu sou Max, seu assistente virtual. Como posso te ajudar hoje?</div>
+            <div class="mensagem usuario">Como faço um PIX internacional?</div>
+            <div class="mensagem assistente">Para PIX (que é nacional), use a tela PIX. Para moedas estrangeiras, use a tela 'Converter' para transferir BRL para USD/EUR.</div>
+        </div>
+    </div>
+
+    <div class="faq-box">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        
+        <h3 class="faq-pergunta">O que é o PIX MaxPay?</h3>
+        <p class="faq-resposta">É a transferência instantânea de dinheiro em Reais (BRL) entre contas, 24 horas por dia, 7 dias por semana, sem custo.</p>
+
+        <h3 class="faq-pergunta">Como funciona a Conversão de Moedas?</h3>
+        <p class="faq-resposta">Você pode trocar seu Real (BRL) por Dólar (USD) ou Euro (EUR) usando as taxas de câmbio atualizadas e instantaneamente creditar o valor na sua Carteira.</p>
+
+        <h3 class="faq-pergunta">Minha conta é segura?</h3>
+        <p class="faq-resposta">Sim. Usamos criptografia e medidas de segurança avançadas, além da autenticação por senha na tela de Login.</p>
+    </div>
+
+    <br>
+    <a href="principal.html" class="botoes botoes-sec btn-acao-voltar">
+      <div class="menu-btn btn-neon">
+        <h3>⬅ Voltar</h3>
+      </div>
+    </a>
+  </section>
+
+  <footer id="rodape">
+    Copyright ©2025 • MaxPay | Todos os direitos reservados
+  </footer>
+  </main>
+
+<script src="../scripts/scripts.js"></script> 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btnAbrirChat = document.getElementById("btnAbrirChat");
+        const chatSimulacao = document.getElementById("chat-simulacao");
+
+        if (btnAbrirChat && chatSimulacao) {
+            btnAbrirChat.addEventListener("click", function (e) {
+                e.preventDefault(); 
+
+                // Alterna a visibilidade do chat
+                if (chatSimulacao.style.display === 'none' || chatSimulacao.style.display === '') {
+                    chatSimulacao.style.display = 'block';
+                    alert("Simulação de Chat Iniciada. Por ser um mecanismo que vou precisar de um back mais complexo, essa tela é apenas uma simulação visual");
+                } else {
+                    chatSimulacao.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

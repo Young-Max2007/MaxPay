@@ -40,8 +40,10 @@ if (formLogin) {
   formLogin.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = formLogin.email.value.trim();
-    const senha = formLogin.senha.value.trim();
+    // No seu HTML de login, os inputs não têm ID, então usamos o atributo name (se for index.html)
+    // Se o formLogin for o HTML que você enviou, ele precisa de inputs com name="email" e name="senha"
+    const email = formLogin.elements.namedItem("email").value.trim();
+    const senha = formLogin.elements.namedItem("senha").value.trim();
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
     const user = usuarios.find(u => u.email === email && u.senha === senha);
@@ -50,6 +52,9 @@ if (formLogin) {
       alert("Email ou senha incorretos!");
       return;
     }
+
+    // NOVA LINHA: Salva o usuário logado para a mensagem de boas-vindas
+    localStorage.setItem("lastLoggedUser", JSON.stringify(user));
 
     alert(`Bem-vindo(a), ${user.nome}!`);
     window.location.href = "principal.html";
@@ -63,17 +68,51 @@ if (formLogin) {
 function atualizarSaldoPrincipal() {
   const saldoEl = document.getElementById("saldoPrincipal");
 
-  if (saldoEl) {
+  if (saldoEl && typeof getSaldo === 'function') {
     // ⚠️ AGORA EXIBE APENAS O SALDO INDIVIDUAL EM BRL
     const saldoBRL = getSaldo("brl"); 
     
     // O h3 com ID 'saldoPrincipal' será atualizado com o valor em Real.
-    saldoEl.innerText = "R$ " + saldoBRL.toFixed(2);
+    saldoEl.innerText = "R$ " + saldoBRL.toFixed(2).replace('.', ',');
   }
 }
 
-// 1. Atualiza quando a página é carregada
-document.addEventListener("DOMContentLoaded", atualizarSaldoPrincipal);
+// ===========================
+// SAUDAÇÃO NA TELA PRINCIPAL (FUNÇÃO NOVA)
+// ===========================
 
-// 2. Atualiza quando a página é mostrada (necessário para sincronização)
+function exibirBoasVindas() {
+    const bemVindoEl = document.getElementById("bemVindoMsg");
+    
+    if (bemVindoEl) {
+        // Tenta buscar o último usuário logado/cadastrado
+        const userJson = localStorage.getItem("lastLoggedUser");
+        
+        if (userJson) {
+            const user = JSON.parse(userJson);
+            // Captura apenas o primeiro nome para uma saudação rápida
+            const primeiroNome = user.nome.split(' ')[0]; 
+            
+            bemVindoEl.innerText = `Bem-vindo(a), ${primeiroNome}!`;
+        } else {
+             // Caso não ache, exibe uma saudação genérica
+             bemVindoEl.innerText = `Bem-vindo(a) ao MaxPay!`;
+        }
+    }
+}
+
+
+// CHAMADAS GERAIS AO CARREGAR A PÁGINA
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Atualiza Saldo
+    atualizarSaldoPrincipal();
+    
+    // 2. Exibe Boas-vindas (se estiver na página principal)
+    if (document.querySelector('title').textContent.includes('Painel Principal')) {
+        exibirBoasVindas();
+    }
+});
+
+// 3. Atualiza quando a página é mostrada (para sincronização de saldos)
 window.addEventListener('pageshow', atualizarSaldoPrincipal);

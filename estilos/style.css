@@ -214,6 +214,17 @@ header {
 /* BOTÕES BASE */
 /* ========================= */
 
+.botoes0 {
+   text-decoration: none;
+   color: rgb(248, 248, 248);
+   background-color: #000000;
+   transition: 0.3s ease;
+   box-shadow:
+        0 0 2px rgba(255,255,255,0.3),
+        0 0 4px rgba(255,255,255,0.6);
+    border-radius: 12px;
+    padding: 12px;
+}
 .botoes {
    text-decoration: none;
    display: block;
@@ -369,9 +380,13 @@ legend {
     color: #ffffff;
 }
 
-/* ========================= */
-/* BOTÃO CONVERTER (PADRONIZAÇÃO CORRIGIDA) */
-/* ========================= */
+#cadastrar-login {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #00bfff;
+    text-decoration: none;
+}
+
 
 #btnConverter {
     /* Layout: Alinha com os inputs do formulário */
@@ -421,4 +436,71 @@ legend {
     .btn-neon p {
         font-size: 1.1rem;
     }
+}
+/* ========================= */
+/* SUPORTE E CHAT SIMULADO */
+/* ========================= */
+
+#chat-simulacao {
+    /* Estilo da caixa de chat */
+    background-color: #0d0d0d;
+    border: 1px solid #defff8; /* Borda neon */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto; /* Permite rolar o chat */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+.mensagem {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
+.assistente {
+    background-color: #2c2c2c; /* Fundo escuro */
+    color: #fff;
+    text-align: left;
+}
+.usuario {
+    background-color: #00ffcc; /* Cor neon */
+    color: #111; /* Texto escuro */
+    text-align: right;
+    margin-left: auto; /* Alinha à direita na coluna flex */
+}
+
+/* ========================= */
+/* FAQ BOX */
+/* ========================= */
+
+.faq-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+.faq-box h2 {
+    color: #e1fff9;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+.faq-pergunta {
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+.faq-resposta {
+    color: #ccc;
+    font-size: 0.9rem;
+    padding-left: 10px;
+    border-left: 2px solid #555;
 }
