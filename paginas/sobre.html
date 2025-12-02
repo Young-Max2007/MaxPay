@@ -2,61 +2,113 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>MaxPay – Sobre</title>
+  <title>MaxPay – Sobre o Sistema</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="../estilos/style.css">
+  
+  <style>
+    /* Estilos específicos para a página Sobre, se necessário */
+    .texto-sobre p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+    .texto-sobre h3 {
+        color: #00ffcc;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed #222;
+        padding-bottom: 5px;
+    }
+    .destaque-neon {
+        color: #00ffcc;
+        font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-<main id="pag">
+<main id="pag" class="visible">
 
-  <!-- CABEÇALHO -->
   <div id="cabecalho">
     <header>
-
       <div class="menu" id="menu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
       <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
-
       <nav class="lateral" id="lateral">
         <ul>
-          <li><a href="sobre.html" class="ativo">Sobre</a></li>
           <li><a href="services.html">Serviços</a></li>
           <li><a href="fac.html">Ajuda (FAQ)</a></li>
+          <li><a href="conta.html">Conta</a></li>
+          <li><a href="index.html">Sair (Log-out)</a></li>
         </ul>
       </nav>
-
     </header>
   </div>
-
-  <!-- CONTEÚDO PRINCIPAL -->
   <section class="painel">
 
-    <div class="topo-painel">
-      <h2>Sobre o MaxPay</h2>
-    </div>
+    <h2>💡 Sobre o MaxPay</h2>
+    <p>O futuro das transações financeiras internacionais, hoje.</p>
 
-    <div class="conteudo">
-      <p>Essa é a página Sobre. Aqui você pode colocar informações sobre o MaxPay, sua missão, valores e história.</p>
+    <div class="texto-sobre">
+        
+        <p>O <span class="destaque-neon">MaxPay</span> é um sistema financeiro digital (<span class="destaque-neon">FinTech</span>) criado com o objetivo de simplificar e agilizar a conversão de moedas e as transações internacionais para o usuário brasileiro.</p>
+
+        <h3>Nossa Missão</h3>
+        <p>Proporcionar uma experiência de câmbio transparente, segura e com taxas competitivas. Nossa missão é eliminar as barreiras geográficas e burocráticas, permitindo que nossos usuários gerenciem seus ativos em moedas estrangeiras (dólar, euro e real) com a mesma facilidade que utilizam serviços bancários locais.</p>
+
+        <h3>Estrutura e Funcionalidades</h3>
+        <p>O sistema MaxPay opera com uma arquitetura moderna e intuitiva, focada na usabilidade e na segurança dos dados.</p>
+        
+        <p>As principais funcionalidades incluem:</p>
+        <ul>
+            <li>
+                <span class="destaque-neon">Carteira Multimoeda:</span> Permite visualizar e gerenciar saldos em Real (BRL), Dólar (USD) e Euro (EUR) de forma centralizada.
+            </li>
+            <li>
+                <span class="destaque-neon">Conversão em Tempo Real:</span> Utiliza taxas simuladas para permitir a conversão imediata entre as moedas disponíveis, descontando e creditando os saldos do usuário instantaneamente (simulação de transação).
+            </li>
+            <li>
+                <span class="destaque-neon">Transações PIX e Simulações:</span> Integra a agilidade do PIX para entrada e saída de fundos em BRL, além de simular o processo de recebimento via QR Code.
+            </li>
+            <li>
+                <span class="destaque-neon">Segurança:</span> Todos os dados de usuário e saldos são gerenciados localmente (via <span class="destaque-neon">localStorage</span>), garantindo uma simulação de privacidade e controle de acesso através de um sistema simplificado de Login/Cadastro.
+            </li>
+        </ul>
+
+        <h3>Tecnologias Utilizadas</h3>
+        <p>O MaxPay foi desenvolvido utilizando padrões web robustos:</p>
+        <ul>
+            <li>
+                <span class="destaque-neon">HTML5:</span> Para estruturação semântica do conteúdo.
+            </li>
+            <li>
+                <span class="destaque-neon">CSS3:</span> Para estilização moderna e responsiva, com destaque para a estética 'Neon' característica.
+            </li>
+            <li>
+                <span class="destaque-neon">JavaScript:</span> Para toda a lógica de negócio, incluindo manipulação de saldos, conversão de moedas e controle de navegação e login/cadastro.
+            </li>
+        </ul>
+
+        <p>O MaxPay representa a inovação na gestão financeira pessoal, tornando o câmbio acessível a todos.</p>
+        
     </div>
 
   </section>
 
-  <!-- RODAPÉ -->
   <footer id="rodape">
     Copyright ©2025 • MaxPay | Todos os direitos reservados
   </footer>
+  </main>
 
-</main>
+<script src="../scripts/scripts.js"></script> 
 
-<!-- JS -->
-<script src="../scripts/scripts.js"></script>
 </body>
 </html>

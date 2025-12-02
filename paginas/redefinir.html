@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – Redefinir Senha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+<main id="pag" class="visible">
+
+  <div id="cabecalho">
+    <header>
+      <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay" style="max-width: 150px; margin: 20px auto; display: block;">
+    </header>
+  </div>
+  <section class="painel">
+
+    <div class="perfil-usuario perfil-destaque" id="form-content">
+
+      <h2>🔒 Redefinir Senha</h2>
+      <p>Insira seu e-mail para receber as instruções de recuperação.</p>
+
+      <form id="formRedefinir">
+
+        <label for="email" class="labels">E-mail de Cadastro</label>
+        <input type="email" class="inputs" id="emailRedefinir" placeholder="seu-email@maxpay.com" required>
+
+        <button type="submit" class="botoes0">
+          Enviar Instruções
+        </button>
+      </form>
+
+      <div class="link-cadastro" style="margin-top: 20px;">
+        <p>Lembrou da senha? <a href="entrar.html" id="logar"> Fazer Login</a></p>
+      </div>
+
+    </div>
+    
+    <div class="perfil-usuario perfil-destaque" id="msgSucesso" style="display: none;">
+        <h2>✅ E-mail Enviado!</h2>
+        <p>As instruções para redefinir sua senha foram enviadas para <strong id="emailExibido"></strong>.</p>
+        <p style="margin-top: 15px;">Verifique sua caixa de entrada e a pasta de spam. Você será redirecionado em 5 segundos.</p>
+        
+        <div class="link-cadastro" style="margin-top: 30px;">
+          <a href="entrar.html" id="logar"> Voltar para o Login</a>
+        </div>
+    </div>
+
+  </section>
+
+  </main>
+
+<script>
+    // ===========================
+    // LÓGICA DE SIMULAÇÃO DE REDEFINIÇÃO
+    // ===========================
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("formRedefinir");
+        const formContent = document.getElementById("form-content");
+        const msgSucesso = document.getElementById("msgSucesso");
+        const emailInput = document.getElementById("emailRedefinir");
+        const emailExibido = document.getElementById("emailExibido");
+
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                
+                // Exibe o email para o usuário na mensagem de sucesso
+                emailExibido.textContent = emailInput.value;
+                
+                // Oculta o formulário
+                formContent.style.display = 'none';
+                
+                // Exibe a mensagem de sucesso
+                msgSucesso.style.display = 'block';
+
+                // Simula o redirecionamento após 5 segundos
+                setTimeout(() => {
+                    window.location.href = "../index.html"; 
+                }, 5000); 
+            });
+        }
+    });
+</script>
+<script src="../scripts/scripts.js"></script>
+
+</body>
+</html>
