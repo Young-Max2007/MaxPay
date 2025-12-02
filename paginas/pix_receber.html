@@ -31,6 +31,27 @@
 
 <main id="pag" class="visible">
     
+    <div id="cabecalho">
+        <header>
+            <div class="menu" id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+            <nav class="lateral" id="lateral">
+                <ul>
+                    <li><a href="principal.html">Início</a></li>
+                    <li><a href="services.html">Serviços</a></li>
+                    <li><a href="fac.html">Ajuda (FAQ)</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html">Sair (Log-out)</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     <section class="painel">
         
         <a href="pix.html" class="botoes botoes-sec btn-acao-voltar">
@@ -39,13 +60,13 @@
             </div>
         </a>
 
-        <h2>💵 Receber com PIX</h2>
+        <h2><img class="icon-inline" src="../imagens/icone-receber.png" alt="icone-receber"> Receber com PIX</h2>
         <p>Compartilhe sua chave Aleatória (ME00Da00NoTA123DEZ)</p>
         
         <div class="area-receber">
-            <p>Receber por QR Code]</p>
+            <p>Receber por QR Code</p>
             <img 
-                src="../imagens/icone-receber.png" 
+                src="../imagens/icone-QR.png" 
                 alt="QR Code - Clique para Receber" 
                 id="imgBotaoReceber"
             >
@@ -55,10 +76,14 @@
         </div>
     </section>
     
+    <footer id="rodape">
+        Copyright ©2025 • MaxPay | Todos os direitos reservados
+    </footer>
     </main>
 
 <script src="../scripts/saldos.js"></script>
-<script src="../scripts/pix_receber.js"></script> <script src="../scripts/scripts.js"></script>
+<script src="../scripts/pix_receber.js"></script>
+<script src="../scripts/scripts.js"></script>
 
 </body>
 </html>
