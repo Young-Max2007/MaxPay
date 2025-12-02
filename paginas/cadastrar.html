@@ -7,63 +7,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema MaxPay para conversão de câmbio rápida, segura e prática">
     <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS: voltar uma pasta -->
+    <link rel="stylesheet" href="../estilos/style.css">
+
     <title>MaxPay - Cadastro</title>
 </head>
 <body>
     <main>
         <div id="pag">
 
-            <div id="cabecalho">
-                <header>
-                    <div class="menu" id="menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <img id="logo" src="MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
-    <!-- Menu lateral -->
-    <nav class="lateral" id="lateral">
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="services.html">Serviços</a></li>
-            <li><a href="fac.html">Ajuda(FAC)</a></li>
-        </ul>
-    </nav>
+            <header>
+                <div class="menu" id="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- imagem -->
+                <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+                <!-- Navegação -->
+                <nav class="lateral" id="lateral">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="fac.html">Ajuda (FAQ)</a></li>
+                    </ul>
+                </nav>
             </header>
-            </div>
 
             <section>
                 <h1>Seja bem vindo(a) ao nosso sistema de câmbio!</h1><br>
                 <h2>
-                    Para continuar seu cadastro conosco, Por favor,
+                    Para continuar seu cadastro conosco, por favor,
                     insira as informações a seguir:
                 </h2>
+
                 <fieldset>
                     <legend>Cadastro</legend>
+
+                    <!-- action dentro da própria pasta /paginas -->
                     <form action="principal.html" id="formCadastro">
+
                         <label for="nome" class="labels">Informe seu nome:</label><br>
                         <input type="text" class="inputs" name="nome" required><br>
+
                         <label for="cpf" class="labels">Informe seu CPF:</label><br>
                         <input type="text" class="inputs" name="cpf" maxlength="11" pattern="\d{11}" required>
+
                         <label for="email" class="labels">E-mail:</label><br>
                         <input type="email" class="inputs" name="email" required><br>
+
                         <label for="senha" class="labels">Senha:</label><br>
                         <input type="password" class="inputs" name="senha" required><br>
+
                         <input type="submit" id="enviar" value="Cadastrar"><br>
+
                     </form>
                 </fieldset>
-                <p>
-                    Já possui uma conta?
-                </p>
+
+                <p>Já possui uma conta?</p>
+
+                <!-- mesma pasta -->
                 <a href="entrar.html" class="botoes">Entrar</a>
             </section>
         </div>
     </main>
+
     <footer id="rodape">
         <p>Copyright ©2025 • MaxPay | Todos os direitos reservados</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <!-- JS: voltar uma pasta -->
+    <script src="../scripts/scripts.js"></script>
 </body>
 </html>

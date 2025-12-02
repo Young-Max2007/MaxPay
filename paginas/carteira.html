@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – Carteira</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS corrigido -->
+  <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+<main id="pag" class="visible">
+
+  <section class="painel">
+
+    <h2>💼 Carteira Internacional</h2>
+    <p>Seus saldos em moedas estrangeiras</p>
+
+    <div class="grid-painel">
+      <!-- REAL -->
+      <div class="menu-btn btn-neon">
+        <h3 class="titulo-com-icone">
+          <img src="../imagens/icone-transferir.png" class="icon-inline">
+          Real (BRL)
+        </h3>
+        <p id="saldo-brl">Saldo: R$ 0.00</p>
+      </div>
+
+      <!-- DÓLAR -->
+      <div class="menu-btn btn-neon">
+        <h3 class="titulo-com-icone">
+          <img src="../imagens/icone-transferir.png" class="icon-inline">
+          Dólar (USD)
+        </h3>
+        <p id="saldo-usd">Saldo: $ 0.00</p>
+      </div>
+
+      <!-- EURO -->
+      <div class="menu-btn btn-neon">
+        <h3 class="titulo-com-icone">
+          <img src="../imagens/icone-transferir.png" class="icon-inline">
+          Euro (EUR)
+        </h3>
+        <p id="saldo-eur">Saldo: € 0.00</p>
+      </div>
+
+    </div>
+
+    <br>
+
+    <!-- voltar: mesma pasta -->
+    <a href="principal.html" class="botoes botoes-sec btn-acao-voltar">
+  <div class="menu-btn btn-neon">
+    <h3>⬅ Voltar</h3>
+  </div>
+</a>
+
+  </section>
+
+</main>
+
+<!-- JS corrigido -->
+<script src="../scripts/carteira.js"></script>
+<script src="../scripts/saldos.js"></script>
+
+</body>
+</html>

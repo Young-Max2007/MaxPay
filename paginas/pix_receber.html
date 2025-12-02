@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – PIX Receber</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/style.css">
+  <style>
+    /* Estilo para a área de simulação de recebimento */
+    .area-receber {
+        text-align: center;
+        margin-top: 50px;
+    }
+    #imgBotaoReceber {
+        cursor: pointer;
+        width: 100%;
+        max-width: 250px; /* Tamanho razoável para a imagem/QR Code */
+        height: auto;
+        border: 4px solid #00ffcc; /* Borda neon */
+        border-radius: 12px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 0 10px #00ffcc;
+    }
+    #imgBotaoReceber:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #00ffcc, 0 0 40px rgba(0, 255, 204, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+<main id="pag" class="visible">
+    
+    <section class="painel">
+        
+        <a href="pix.html" class="botoes botoes-sec btn-acao-voltar">
+            <div class="menu-btn btn-neon">
+                <h3>⬅ Voltar</h3>
+            </div>
+        </a>
+
+        <h2>💵 Receber com PIX</h2>
+        <p>Compartilhe sua chave (.............)</p>
+        
+        <div class="area-receber">
+            <p>Receber por QR Code]</p>
+            <img 
+                src="../imagens/icone-receber.png" 
+                alt="QR Code - Clique para Receber" 
+                id="imgBotaoReceber"
+            >
+            <p style="margin-top: 20px; color: gray;">
+                *clique no QR Code para gerar cobrança
+            </p>
+        </div>
+    </section>
+    
+    </main>
+
+<script src="../scripts/saldos.js"></script>
+<script src="../scripts/pix_receber.js"></script> <script src="../scripts/scripts.js"></script>
+
+</body>
+</html>

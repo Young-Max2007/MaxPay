@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+<main id="pag" class="visible">
+
+  <!-- CABEÇALHO -->
+  <div id="cabecalho">
+    <header>
+
+      <div class="menu" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+      <nav class="lateral" id="lateral">
+        <ul>
+          <li><a href="principal.html">Painel</a></li>
+          <li><a href="pix.html">PIX</a></li>
+          <li><a href="fac.html">Ajuda</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+
+  <!-- CONVERTER -->
+  <section class="painel">
+
+    <div class="perfil-usuario perfil-destaque">
+
+      <h2>Conversão de Moedas</h2>
+      <p>Converta valores em tempo real</p>
+
+      <form class="form-conversao">
+
+        <label class="labels">Valor</label>
+        <input type="number" class="inputs" id="valor" placeholder="Ex: 100">
+
+        <label class="labels">De</label>
+        <select class="inputs" id="moedaDe">
+          <option value="BRL">Real (BRL)</option>
+          <option value="USD">Dólar (USD)</option>
+          <option value="EUR">Euro (EUR)</option>
+        </select>
+
+        <label class="labels">Para</label>
+        <select class="inputs" id="moedaPara">
+          <option value="USD">Dólar (USD)</option>
+          <option value="BRL">Real (BRL)</option>
+          <option value="EUR">Euro (EUR)</option>
+        </select>
+
+        <button type="button" id="btnConverter" class="btn-neon">
+          Converter
+        </button>
+
+        <div class="resultado-conversao" id="resultado">
+          Resultado aparecerá aqui
+        </div>
+
+      </form>
+<br>
+        <a href="principal.html" class="botoes botoes-sec btn-acao-voltar">
+  <div class="menu-btn btn-neon">
+    <h3>⬅ Voltar</h3>
+  </div>
+</a>
+
+    </div>
+    
+
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="rodape">
+    Copyright ©2025 • MaxPay
+  </footer>
+
+</main>
+
+<!-- JS -->
+<script src="../scripts/converter.js"></script>
+<script src="../scripts/saldos.js"></script>
+<script src="../scripts/scripts.js"></script>
+</body>
+</html>

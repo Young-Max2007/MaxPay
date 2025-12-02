@@ -1,0 +1,78 @@
+<!--Sistema criado por - Ruan Max Nunes Bertoldo.  Matrícula : 01803011-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema MaxPay para conversão de câmbio rápida, segura e prática">
+    <meta name="theme-color" content="#000000">
+
+    <!-- CSS corrigido -->
+    <link rel="stylesheet" href="../estilos/style.css">
+
+    <title>MaxPay - Login</title>
+</head>
+<body>
+    <main>
+        <div id="pag">
+
+            <header>
+                <div class="menu" id="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- LOGO corrigido -->
+                <img id="logo" src="../imagens/MaxPay-Grande(fundoPreto).png" alt="Logo MaxPay">
+
+                <!-- Menu lateral -->
+                <nav class="lateral" id="lateral">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="fac.html">Ajuda (FAQ)</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section>
+                <h1>Seja bem vindo(a) de volta!</h1><br>
+                <h2>
+                    Para continuar sua conexão conosco, por favor,
+                    insira suas informações de login:
+                </h2>
+
+                <fieldset>
+                    <legend>Log-in</legend>
+
+                    <!-- action dentro de paginas, então sem ../ -->
+                    <form action="principal.html">
+                        <label class="labels">E-mail:</label><br>
+                        <input type="email" class="inputs" name="email" required><br>
+
+                        <label class="labels">Senha:</label><br>
+                        <input type="password" class="inputs" name="senha" required><br>
+
+                        <input type="submit" id="enviar" value="Entrar"><br>
+                    </form>
+                </fieldset>
+
+                <p>Ainda não possui uma conta?</p>
+
+                <!-- mesma pasta -->
+                <a href="cadastrar.html" class="botoes">Cadastrar-se</a>
+            </section>
+        </div>
+    </main>
+
+    <footer id="rodape">
+        <p>Copyright ©2025 • MaxPay | Todos os direitos reservados</p>
+    </footer>
+
+    <!-- JS corrigido -->
+    <script src="../scripts/scripts.js"></script>
+</body>
+</html>

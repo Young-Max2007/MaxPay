@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MaxPay – PIX Pagar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+<main id="pag" class="visible">
+    
+    <section class="painel">
+        
+        <a href="pix.html" class="botoes botoes-sec btn-acao-voltar">
+            <div class="menu-btn btn-neon">
+                <h3>⬅ Voltar</h3>
+            </div>
+        </a>
+
+        <div class="perfil-usuario perfil-destaque">
+            <h2>💸 Pagar com PIX</h2>
+            <p>Seu saldo atual: <span id="saldoAtualBRL">R$ 0,00</span></p>
+
+            <form id="formPixPagar">
+
+                <label class="labels">Valor a Enviar (R$)</label>
+                <input type="number" class="inputs" id="valorPix" placeholder="0.00" step="0.01" required>
+
+                <label class="labels">Chave PIX</label>
+                <input type="text" class="inputs" id="chavePix" placeholder="CPF/Email/Telefone/Chave Aleatória" required>
+
+                <button type="submit" id="btnConfirmarPix" class="btn-neon">
+                    Confirmar e Enviar PIX
+                </button>
+            </form>
+        </div>
+
+    </section>
+    
+    </main>
+
+<script src="../scripts/saldos.js"></script>
+<script src="../scripts/pix_pagar.js"></script> <script src="../scripts/scripts.js"></script>
+
+</body>
+</html>
