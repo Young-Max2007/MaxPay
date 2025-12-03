@@ -364,8 +364,8 @@ form {
 }
 
 fieldset {
-    width: 30%;
-    margin: 5px auto;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 10px;
     border: 1px solid #777777;
     border-radius: 7px;
