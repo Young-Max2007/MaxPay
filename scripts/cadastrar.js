@@ -1,4 +1,4 @@
-// Este bloco gerencia a submissão do formulário de cadastro.
+// Esse bloco gerencia o envio do formulário de cadastro.
 document.addEventListener("DOMContentLoaded", function () {
     const formCadastro = document.getElementById("formCadastro");
 
