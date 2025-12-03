@@ -1,7 +1,4 @@
-// ===========================
-// LÓGICA DE CADASTRO
-// ===========================
-
+// Este bloco gerencia a submissão do formulário de cadastro.
 document.addEventListener("DOMContentLoaded", function () {
     const formCadastro = document.getElementById("formCadastro");
 
@@ -9,27 +6,28 @@ document.addEventListener("DOMContentLoaded", function () {
         formCadastro.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Pega os valores pelos nomes dos inputs (conforme seu HTML)
+            // Pega os dados que o usuário digitou no formulário.
             const nome = formCadastro.elements.namedItem("nome").value.trim();
             const cpf = formCadastro.elements.namedItem("cpf").value.trim();
             const email = formCadastro.elements.namedItem("email").value.trim();
             const senha = formCadastro.elements.namedItem("senha").value.trim();
 
+            // Validação simples para garantir que os campos estão preenchidos.
             if (nome.length < 3 || email.length < 5 || senha.length < 3 || cpf.length !== 11) {
                 alert("Por favor, preencha todos os campos corretamente.");
                 return;
             }
 
-            // 1. CARREGA USUÁRIOS EXISTENTES
+            // Carrega todos os usuários já existentes do LocalStorage.
             const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-            // 2. VERIFICA DUPLICIDADE (por Email)
+            // Verifica se o email que está sendo cadastrado já existe.
             if (usuarios.find(u => u.email === email)) {
                 alert("Este email já está cadastrado.");
                 return;
             }
 
-            // 3. CRIA NOVO USUÁRIO
+            // Cria o objeto com as informações do novo usuário.
             const novoUsuario = {
                 nome: nome,
                 cpf: cpf,
@@ -37,17 +35,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 senha: senha
             };
 
-            // 4. SALVA E ATUALIZA LISTA
+            // Salva o novo usuário no array e atualiza o LocalStorage.
             usuarios.push(novoUsuario);
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
             
-            // 5. MARCA O NOVO USUÁRIO COMO LOGADO
+            // Já define o usuário como logado, para ir direto para o painel.
             localStorage.setItem("lastLoggedUser", JSON.stringify(novoUsuario));
 
 
             alert(`Cadastro realizado com sucesso, ${nome}! Você será redirecionado.`);
             
-            // 6. REDIRECIONA para a action do formulário
+            // Redireciona para a tela principal.
             window.location.href = formCadastro.action;
         });
     }

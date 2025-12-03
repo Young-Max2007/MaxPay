@@ -1,3 +1,4 @@
+// Script para simular o recebimento de PIX ao clicar no QR Code.
 document.addEventListener("DOMContentLoaded", function () {
     
     const imgBotaoReceber = document.getElementById("imgBotaoReceber");
@@ -6,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imgBotaoReceber.addEventListener("click", function (e) {
             e.preventDefault();
 
+            // Valores de transação SIMULADOS (gambiarra para mostrar a funcionalidade).
             const valorRecebido = 5000.00;
             const origem = "Ruan Max";
             const moeda = "brl";
@@ -13,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const saldoAtual = getSaldo(moeda);
             const novoSaldo = saldoAtual + valorRecebido;
 
-            // 1. ATUALIZA SALDO
+            // 1. Adiciona o valor no saldo BRL.
             setSaldo(moeda, novoSaldo);
 
-            // 2. REGISTRA NO HISTÓRICO
+            // 2. Cria e registra o evento de recebimento no histórico.
             const transacao = {
                 id: Date.now(),
                 tipo: 'PIX (Recebimento)',
@@ -33,11 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 addHistorico(transacao);
             }
 
-            // 3. FEEDBACK VISUAL
+            // 3. Alerta o usuário sobre o recebimento.
             alert(`Você recebeu R$: ${valorRecebido.toFixed(2)} de ${origem}!`);
-            
-            // Opcional: Redirecionar para a tela principal do PIX após o recebimento (para ver o saldo atualizado)
-            // window.location.href = 'pix.html';
         });
     }
 });

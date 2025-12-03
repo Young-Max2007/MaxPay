@@ -1,28 +1,24 @@
+// Script para carregar e exibir os dados do usuário na tela de conta.
 document.addEventListener("DOMContentLoaded", function () {
 
     const nomeUsuarioEl = document.getElementById("nomeUsuario");
     const emailUsuarioEl = document.getElementById("emailUsuario");
 
-    // Tenta obter o usuário logado do localStorage
-    // Assumimos que o scripts.js ou login armazena o último usuário logado,
-    // ou que o 'scripts.js' global pode ter a função getLoggedUser()
+    // Função que busca os dados do último usuário logado no LocalStorage.
     function getLoggedUser() {
-        // Esta função deve ser robusta para encontrar o usuário
-        // No seu código de login, você pode salvar o objeto do usuário completo ou apenas o ID/Email.
-        // Vamos usar um placeholder baseado no último login:
-        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-        
-        // Simulação: Pegar o primeiro usuário cadastrado para fins de demonstração
-        if (usuarios.length > 0) {
-            return usuarios[0]; 
+        const userJson = localStorage.getItem("lastLoggedUser");
+
+        if (userJson) {
+            return JSON.parse(userJson);
         }
         
-        // Valor padrão se não houver usuários
+        // Retorna um texto de placeholder caso não encontre o usuário logado.
         return { nome: "Usuário MaxPay", email: "maxpay@contato.com" };
     }
 
     const usuario = getLoggedUser();
 
+    // Atualiza os campos na tela com as informações do usuário.
     if (nomeUsuarioEl) {
         nomeUsuarioEl.textContent = usuario.nome;
     }

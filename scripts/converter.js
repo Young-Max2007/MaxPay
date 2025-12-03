@@ -1,17 +1,14 @@
+// Lógica de conversão de câmbio entre moedas.
 document.addEventListener("DOMContentLoaded", function () {
 
+  // Elementos do formulário.
   const valorEl = document.getElementById("valor");
   const moedaDeEl = document.getElementById("moedaDe");
   const moedaParaEl = document.getElementById("moedaPara");
   const btnConverter = document.getElementById("btnConverter");
   const resultadoDiv = document.getElementById("resultado");
 
-  // A função toNumber não é mais estritamente necessária,
-  // mas se for usada em outro lugar, use a versão simplificada:
-  function toNumber(value) {
-    return parseFloat(value); 
-  }
-
+  // Tabela de taxas de conversão SIMULADAS (gambiarra para simular cotação de mercado).
   function getConversionRate(de, para) {
     const taxas = {
       "BRL-USD": 0.20,
@@ -21,21 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
       "USD-EUR": 0.92,
       "EUR-USD": 1.08
     };
+    // Monta a chave (ex: "BRL-USD") e busca a taxa.
     return taxas[`${de}-${para}`] || null;
   }
 
   btnConverter.addEventListener("click", function () {
 
-    // 💡 CORREÇÃO: Usando parseFloat diretamente para garantir a leitura correta do decimal.
     const valor = parseFloat(valorEl.value); 
     const moedaDe = moedaDeEl.value;
     const moedaPara = moedaParaEl.value;
 
+    // Valida se o valor é válido.
     if (isNaN(valor) || valor <= 0) {
       resultadoDiv.innerText = "Digite um valor válido.";
       return;
     }
 
+    // Não permite converter para a mesma moeda.
     if (moedaDe === moedaPara) {
       resultadoDiv.innerText = "Selecione moedas diferentes.";
       return;
@@ -49,24 +48,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const saldoOrigem = getSaldo(moedaDe.toLowerCase());
 
+    // Valida se o usuário tem saldo para a conversão.
     if (saldoOrigem < valor) {
       resultadoDiv.innerText = `Saldo insuficiente em ${moedaDe}.`;
       return;
     }
 
+    // Calcula o valor final convertido.
     const resultado = valor * taxa;
 
-    // 💸 DESCONTA
+    // Processa o câmbio:
+    // 1. Tira o valor da moeda de origem.
     setSaldo(moedaDe.toLowerCase(), saldoOrigem - valor);
 
-    // 💰 ADICIONA
+    // 2. Adiciona o valor convertido na moeda de destino.
     const saldoDestino = getSaldo(moedaPara.toLowerCase());
     setSaldo(moedaPara.toLowerCase(), saldoDestino + resultado);
     
-    // ===========================
-    // 📜 NOVO: REGISTRA A TRANSAÇÃO NO HISTÓRICO
-    // (Requer que a função addHistorico esteja em saldos.js)
-    // ===========================
+    // Cria o registro da transação.
     const transacao = {
         id: Date.now(),
         tipo: 'Conversão',
@@ -77,16 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
         moedaPara: moedaPara,
         resultado: resultado.toFixed(2)
     };
-    // Esta função deve ser implementada no saldos.js
+    
+    // Adiciona ao histórico (função global do saldos.js).
     if (typeof addHistorico === 'function') {
         addHistorico(transacao);
     }
-    // ===========================
     
-    resultadoDiv.innerText =
-      `Convertido: ${resultado.toFixed(2)} ${moedaPara}`;
+    // Mensagem de sucesso.
+    resultadoDiv.innerText = `Sucesso! Você converteu ${valor.toFixed(2)} ${moedaDe} para ${resultado.toFixed(2)} ${moedaPara}.`;
 
-    valorEl.value = "";
   });
-
 });
